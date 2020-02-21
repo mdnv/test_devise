@@ -1,0 +1,7 @@
+<select onchange="location = this.value;">
+  <% I18n.available_locales.each do |c| %>
+  <option <%= is_current_locale(c) %> value="<%= "/#{c.to_s}#{request.env['PATH_INFO'].partition(locale.to_s).last}" %>">
+    <%= flash_class(c.to_s) %>
+  </option>
+ <% end %>
+</select><br>

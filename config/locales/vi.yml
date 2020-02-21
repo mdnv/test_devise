@@ -1,0 +1,14 @@
+vi:
+  layouts:
+    header:
+      english: "Tiếng Anh"
+      japanese: "Tiếng Nhật"
+      vietnamese: "Tiếng Việt"
+  home:
+    index:
+      hello: "Xin chào thế giới"
+      users: "Người dùng"
+      edit: "Sửa"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
+      signup: "Đăng ký"

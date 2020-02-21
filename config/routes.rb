@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
+  get '/:locale' => 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  root to: "home#index"
+  root 'home#detect_locale'
   resources :users
+end
 end
