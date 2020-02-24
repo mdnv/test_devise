@@ -1,9 +1,11 @@
-<a href="/users">Users</a><br>
+<%= link_to t(".users"), users_path %><br>
 <% if user_signed_in? %>
   <%= current_user.email %><br>
-  <a href="/users/edit">Edit</a><br>
-  <a href="/users/sign_out">Đăng xuất</a>
+  <%= link_to t(".edit"), edit_user_registration_path %><br>
+  <%= link_to t(".logout"), destroy_user_session_path %><br>
 <% else %>
-  <a href="/users/sign_in">Log In</a><br>
-  <a href="/users/sign_up">Sign Up</a><br>
+  <%= link_to t(".login"), new_user_session_path %><br>
+  <%= link_to t(".signup"), new_user_registration_path %><br>
 <% end %>
+
+<h1><%= t(".hello") %></h1>
